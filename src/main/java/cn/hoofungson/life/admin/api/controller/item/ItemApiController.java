@@ -45,6 +45,7 @@ public class ItemApiController implements Serializable {
         map.put("code", 200101L);
         List<ItemVO> itemVOList = this.restTemplate.getForObject(new URI("http://life-item-service//life/service/item"), List.class);
         map.put("result", itemVOList);
+        map.put("message", "流水获取成功");
         return new HttpEntity<>(map);
     }
 }
